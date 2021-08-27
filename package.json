@@ -1,11 +1,18 @@
 {
   "name": "loxjs",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "js port of lox",
   "main": "index.js",
   "author": "Kam Lasater <ckl@seekayel.com>",
   "license": "MIT",
   "private": false,
+  "bin": {
+    "lox": "bin/lox"
+  },
+  "files": [
+    "bin/",
+    "*.js"
+  ],
   "scripts": {
     "lox": "node index.js"
   }
