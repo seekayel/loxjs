@@ -1,6 +1,6 @@
 {
   "name": "loxjs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "js port of lox",
   "main": "index.js",
   "author": "Kam Lasater <ckl@seekayel.com>",
