@@ -11,16 +11,23 @@ function runFile(name) {
   run(file.toString())
 }
 
-function runPrompt() {
-  process.stdout.write('Welcome to the loxjs REPL\n')
+function runREPL() {
+  const repl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    removeHistoryDuplicates: true,
+    tabSize: 2,
+    terminal: true
+  })
+  repl.prompt();
 
-  while(true) {
-    process.stdout.write('> ')
-    var line = undefined
-    if (!line) {
-      break;
-    }
-  }
+  repl.on('line', line => {
+    run(line.trim())
+    repl.prompt()
+  }).on('close', () => {
+    console.log('\nHave a great day!');
+    process.exit(0);
+  });
 }
 
 
@@ -34,7 +41,7 @@ function main(argv) {
     // console.log(fileName)
     runFile(fileName)
   } else {
-    runPrompt()
+    runREPL()
   }
 }
 
